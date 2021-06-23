@@ -171,7 +171,6 @@ const CreatePetShelter = (props) => {
                 <div>
                     <label>Image URL: </label>
                     <input
-                        placeholder="Optional"
                         type="text"
                         name="petimage"
                         value={newPet.petimage}
