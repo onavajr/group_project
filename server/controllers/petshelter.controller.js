@@ -23,7 +23,7 @@ module.exports.createPetshelter = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.json(err);
+            res.status(500).json(err);
         })
 };
 
@@ -37,7 +37,7 @@ module.exports.getOnePetshelter = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.json(err);
+            res.status(500).json(err);
         })
 };
 
@@ -57,7 +57,7 @@ module.exports.updatePetshelter = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.json(err);
+            res.status(500).json(err);
         })
 };
 
@@ -72,7 +72,7 @@ module.exports.deletePetshelter = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.json(err);
+            res.status(500).json(err);
         });
 };
 

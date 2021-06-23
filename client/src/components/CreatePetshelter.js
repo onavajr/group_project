@@ -13,6 +13,10 @@ const CreatePetShelter = (props) => {
         petimage: ""
     });
     
+    const[errors, setErrors] = useState({
+
+    });
+
     const submitHandler = (e) => {
         e.preventDefault();
         axios.post('http://localhost:8000/api/petshelter/new', newPet)
@@ -21,7 +25,8 @@ const CreatePetShelter = (props) => {
                 navigate('/petshelter');
             })
             .catch((err) => {
-                console.log(err)
+                console.log(JSON.stringify(err));
+                setErrors(err.response.data.errors)
             });
     }
 
@@ -39,13 +44,23 @@ const CreatePetShelter = (props) => {
             <h1>Create Pets</h1>
             <form onSubmit={submitHandler}>
                 <div>
-                    <label>Pet Name: </label>
+                    <label>Name: </label>
                     <input
                         type="text"
                         name="petname"
                         value={newPet.petname}
                         onChange={(e) => inputChange(e)}
-                    />  
+                    /><br/>
+                     {
+                        newPet.petname.length > 0 && newPet.petname.length < 3 ?
+                        <span className="error-text"> Pet name must be at leats 3 characters long</span>
+                        :null
+                    }
+                    {
+                        errors.petname ?
+                            <span className="error-text"> {errors.petname.message}</span>
+                            :null
+                    }
                 </div>
                 <div>
                     <label>Pet Type: </label>
@@ -54,7 +69,17 @@ const CreatePetShelter = (props) => {
                         name="pettype"
                         value={newPet.pettype}
                         onChange={(e) => inputChange(e)}
-                    />  
+                    /><br/>
+                    {
+                        newPet.pettype.length > 0 && newPet.pettype.length < 3 ?
+                        <span className="error-text"> Pet type must be at leats 3 characters long</span>
+                        :null
+                    }
+                    {
+                        errors.pettype ?
+                            <span className="error-text"> {errors.pettype.message}</span>
+                            :null
+                    }
                 </div>
                 <div>
                     <label>Description: </label>
@@ -63,7 +88,17 @@ const CreatePetShelter = (props) => {
                         name="petdescription"
                         value={newPet.petdescription}
                         onChange={(e) => inputChange(e)}
-                    />  
+                    /><br/>
+                    {
+                        newPet.petdescription.length > 0 && newPet.petdescription.length < 3 ?
+                        <span className="error-text"> Description must be at leats 3 characters long</span>
+                        :null
+                    }
+                    {
+                        errors.petdescription ?
+                            <span className="error-text"> {errors.petdescription.message}</span>
+                            :null
+                    } 
                 </div>
                 <div>
                 <label>First Skill: </label>
@@ -80,7 +115,13 @@ const CreatePetShelter = (props) => {
                         <option value="Flying">Flying</option>
                         <option value="Talking">Talking</option>
                         
-                    </select>  
+                    </select>
+                    <br/>
+                    {
+                        errors.firstskill ?
+                            <span className="error-text"> {errors.firstskill.message}</span>
+                            :null
+                    }  
                 </div>
                 <div>
                     <label>Second Skill: </label>
@@ -97,6 +138,12 @@ const CreatePetShelter = (props) => {
                         <option value="Talking">Talking</option>
                         <option value="Swimming">Swimming</option>
                     </select>
+                    <br/>
+                    {
+                        errors.secondskill ?
+                            <span className="error-text"> {errors.secondskill.message}</span>
+                            :null
+                    }
                 </div>
                 <div>
                 <label>Third Skill: </label>
@@ -113,11 +160,18 @@ const CreatePetShelter = (props) => {
                         <option value="Flying">Flying</option>
                         
                         <option value="Swimming">Swimming</option>
-                    </select> 
+                    </select>
+                    <br/>
+                    {
+                        errors.thirdskill ?
+                            <span className="error-text"> {errors.thirdskill.message}</span>
+                            :null
+                    }
                 </div>
                 <div>
                     <label>Image URL: </label>
                     <input
+                        placeholder="Optional"
                         type="text"
                         name="petimage"
                         value={newPet.petimage}
