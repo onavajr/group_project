@@ -43,12 +43,13 @@ const CreatePetShelter = (props) => {
 
     return (
         <div>
-            <h1>Create Pets</h1>
+            <h1>Add Pet in the Shelter</h1>
             <PetForm
                 submitHandler={submitHandler}
                 errors={ errors }
                 pet={ newPet}
-                setPet={setNewPet}/>
+                setPet={setNewPet}
+                labelButton={ "Add Pet" }/>
             
         </div>
     )

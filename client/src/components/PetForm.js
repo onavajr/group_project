@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 
 const PetForm   = (props) => { 
-    const { submitHandler, errors, pet, setPet } = props;
+    const { submitHandler, errors, pet, setPet, labelButton } = props;
     // const [ pet, setPet ] = useState({
     //     petname: "",
     //     pettype: "",
@@ -42,7 +42,6 @@ const PetForm   = (props) => {
 
     return (
         <div>
-            <h1>Create Pets</h1>
             <form onSubmit={submitHandler}>
                 <div>
                     <label>Name: </label>
@@ -53,12 +52,12 @@ const PetForm   = (props) => {
                         onChange={(e) => inputChange(e)}
                     /><br/>
                      {
-                        pet.petname.length > 0 && pet.petname.length < 3 ?
+                        pet.petname && pet.petname.length > 0 && pet.petname.length < 3 ?
                         <span className="error-text"> Pet name must be at leats 3 characters long</span>
                         :null
                     }
                     {
-                        pet.errors.petname ?
+                        errors.petname ?
                             <span className="error-text"> {errors.petname.message}</span>
                             :null
                     }
@@ -72,7 +71,7 @@ const PetForm   = (props) => {
                         onChange={(e) => inputChange(e)}
                     /><br/>
                     {
-                        pet.pettype.length > 0 && pet.pettype.length < 3 ?
+                        pet.pettype && pet.pettype.length > 0 && pet.pettype.length < 3 ?
                         <span className="error-text"> Pet type must be at leats 3 characters long</span>
                         :null
                     }
@@ -91,7 +90,7 @@ const PetForm   = (props) => {
                         onChange={(e) => inputChange(e)}
                     /><br/>
                     {
-                        pet.petdescription.length > 0 && pet.petdescription.length < 3 ?
+                        pet.petdescription && pet.petdescription.length > 0 && pet.petdescription.length < 3 ?
                         <span className="error-text"> Description must be at leats 3 characters long</span>
                         :null
                     }
@@ -178,7 +177,7 @@ const PetForm   = (props) => {
                         onChange={(e) => inputChange(e)}
                     />  
                 </div>
-                <button type="submit">Add Pet</button>
+                <button type="submit">{ labelButton }</button>
             </form>
         </div>
     )
