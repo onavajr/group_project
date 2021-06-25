@@ -43,141 +43,153 @@ const PetForm   = (props) => {
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <div>
-                    <label>Name: </label>
-                    <input
-                        type="text"
-                        name="petname"
-                        value={pet.petname}
-                        onChange={(e) => inputChange(e)}
-                    /><br/>
-                     {
-                        pet.petname && pet.petname.length > 0 && pet.petname.length < 3 ?
-                        <span className="error-text"> Pet name must be at leats 3 characters long</span>
-                        :null
-                    }
-                    {
-                        errors.petname ?
-                            <span className="error-text"> {errors.petname.message}</span>
+                <div  className="petForm">
+                    <div  className="formInput">
+                        <label>Name: </label>
+                        <input
+                            className="formLabel"
+                            type="text"
+                            name="petname"
+                            value={pet.petname}
+                            onChange={(e) => inputChange(e)}
+                        /><br/>
+                        {
+                            pet.petname && pet.petname.length > 0 && pet.petname.length < 3 ?
+                            <span className="error-text"> Pet name must be at leats 3 characters long</span>
                             :null
-                    }
-                </div>
-                <div>
-                    <label>Pet Type: </label>
-                    <input
-                        type="text"
-                        name="pettype"
-                        value={pet.pettype}
-                        onChange={(e) => inputChange(e)}
-                    /><br/>
-                    {
-                        pet.pettype && pet.pettype.length > 0 && pet.pettype.length < 3 ?
-                        <span className="error-text"> Pet type must be at leats 3 characters long</span>
-                        :null
-                    }
-                    {
-                        errors.pettype ?
-                            <span className="error-text"> {errors.pettype.message}</span>
+                        }
+                        {
+                            errors.petname ?
+                                <span className="error-text"> {errors.petname.message}</span>
+                                :null
+                        }
+                    </div>
+                    <div  className="formInput">
+                        <label>Pet Type: </label>
+                        <input
+                            className="formInput"
+                            type="text"
+                            name="pettype"
+                            value={pet.pettype}
+                            onChange={(e) => inputChange(e)}
+                        /><br/>
+                        {
+                            pet.pettype && pet.pettype.length > 0 && pet.pettype.length < 3 ?
+                            <span className="error-text"> Pet type must be at leats 3 characters long</span>
                             :null
-                    }
-                </div>
-                <div>
-                    <label>Description: </label>
-                    <input
-                        type="text"
-                        name="petdescription"
-                        value={pet.petdescription}
-                        onChange={(e) => inputChange(e)}
-                    /><br/>
-                    {
-                        pet.petdescription && pet.petdescription.length > 0 && pet.petdescription.length < 3 ?
-                        <span className="error-text"> Description must be at leats 3 characters long</span>
-                        :null
-                    }
-                    {
-                        errors.petdescription ?
-                            <span className="error-text"> {errors.petdescription.message}</span>
+                        }
+                        {
+                            errors.pettype ?
+                                <span className="error-text"> {errors.pettype.message}</span>
+                                :null
+                        }
+                    </div>
+                    <div  className="formInput">
+                        <label>Description: </label>
+                        <input
+                            className="formInput"
+                            type="text"
+                            name="petdescription"
+                            value={pet.petdescription}
+                            onChange={(e) => inputChange(e)}
+                        /><br/>
+                        {
+                            pet.petdescription && pet.petdescription.length > 0 && pet.petdescription.length < 3 ?
+                            <span className="error-text"> Description must be at leats 3 characters long</span>
                             :null
-                    } 
-                </div>
-                <div>
-                <label>First Skill: </label>
-                    <select
-                        type="text"
-                        name="firstskill"
-                        value={pet.sfirstskill}
-                        onChange={(e) => inputChange(e)}
-                    >
-                        <option value="Swimming">Swimming</option>
-                        <option value="Eating">Eating</option>
-                        <option value="Sleeping">Sleeping</option>
-                        <option value="Jumping">Jumping</option>
-                        <option value="Flying">Flying</option>
-                        <option value="Talking">Talking</option>
+                        }
+                        {
+                            errors.petdescription ?
+                                <span className="error-text"> {errors.petdescription.message}</span>
+                                :null
+                        } 
+                    </div>
+                    <div  className="formInput">
+                    <label>First Skill: </label>
+                        <select
+                            className="formInput"
+                            type="text"
+                            name="firstskill"
+                            value={pet.sfirstskill}
+                            onChange={(e) => inputChange(e)}
+                        >
+                            <option value="Swimming">Swimming</option>
+                            <option value="Eating">Eating</option>
+                            <option value="Sleeping">Sleeping</option>
+                            <option value="Jumping">Jumping</option>
+                            <option value="Flying">Flying</option>
+                            <option value="Talking">Talking</option>
+                            
+                        </select>
+                        <br/>
+                        {
+                            errors.firstskill ?
+                                <span className="error-text"> {errors.firstskill.message}</span>
+                                :null
+                        }  
+                    </div>
+                    <div  className="formInput">
+                        <label>Second Skill: </label>
+                        <select
+                            className="formInput"
+                            type="text"
+                            name="secondskill"
+                            value={pet.secondskill}
+                            onChange={(e) => inputChange(e)}
+                        >
+                            <option value="Eating">Eating</option>
+                            <option value="Sleeping">Sleeping</option>
+                            <option value="Jumping">Jumping</option>
+                            <option value="Flying">Flying</option>
+                            <option value="Talking">Talking</option>
+                            <option value="Swimming">Swimming</option>
+                        </select>
+                        <br/>
+                        {
+                            errors.secondskill ?
+                                <span className="error-text"> {errors.secondskill.message}</span>
+                                :null
+                        }
+                    </div>
+                    <div  className="formInput">
+                    <label>Third Skill: </label>
+                        <select
+                            type="text"
+                            name="thirdskill"
+                            value={pet.thirdskill}
+                            onChange={(e) => inputChange(e)}
+                        >
+                            <option value="Talking">Talking</option>
+                            <option value="Eating">Eating</option>
+                            <option value="Sleeping">Sleeping</option>
+                            <option value="Jumping">Jumping</option>
+                            <option value="Flying">Flying</option>
+                            
+                            <option value="Swimming">Swimming</option>
+                        </select>
+                        <br/>
+                        {
+                            errors.thirdskill ?
+                                <span className="error-text"> {errors.thirdskill.message}</span>
+                                :null
+                        }
+                    </div>
+                    <div  className="formInput">
+                        <label>Image URL: </label>
+                        <input
+                            className="formInput"
+                            type="text"
+                            name="petimage"
+                            value={pet.petimage}
+                            onChange={(e) => inputChange(e)}
+                        />  
+                    </div>
+                    <br/>
                         
-                    </select>
-                    <br/>
-                    {
-                        errors.firstskill ?
-                            <span className="error-text"> {errors.firstskill.message}</span>
-                            :null
-                    }  
-                </div>
-                <div>
-                    <label>Second Skill: </label>
-                    <select
-                        type="text"
-                        name="secondskill"
-                        value={pet.secondskill}
-                        onChange={(e) => inputChange(e)}
-                    >
-                        <option value="Eating">Eating</option>
-                        <option value="Sleeping">Sleeping</option>
-                        <option value="Jumping">Jumping</option>
-                        <option value="Flying">Flying</option>
-                        <option value="Talking">Talking</option>
-                        <option value="Swimming">Swimming</option>
-                    </select>
-                    <br/>
-                    {
-                        errors.secondskill ?
-                            <span className="error-text"> {errors.secondskill.message}</span>
-                            :null
-                    }
-                </div>
-                <div>
-                <label>Third Skill: </label>
-                    <select
-                        type="text"
-                        name="thirdskill"
-                        value={pet.thirdskill}
-                        onChange={(e) => inputChange(e)}
-                    >
-                        <option value="Talking">Talking</option>
-                        <option value="Eating">Eating</option>
-                        <option value="Sleeping">Sleeping</option>
-                        <option value="Jumping">Jumping</option>
-                        <option value="Flying">Flying</option>
-                        
-                        <option value="Swimming">Swimming</option>
-                    </select>
-                    <br/>
-                    {
-                        errors.thirdskill ?
-                            <span className="error-text"> {errors.thirdskill.message}</span>
-                            :null
-                    }
-                </div>
-                <div>
-                    <label>Image URL: </label>
-                    <input
-                        type="text"
-                        name="petimage"
-                        value={pet.petimage}
-                        onChange={(e) => inputChange(e)}
-                    />  
-                </div>
-                <button type="submit">{ labelButton }</button>
+                    <div className="updateButton" >
+                    <button type="submit">{ labelButton }</button>
+                    </div>
+                    </div>
             </form>
         </div>
     )

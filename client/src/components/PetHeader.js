@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import { MdPets,  } from 'react-icons/md';
+import { FaHome,  } from 'react-icons/fa';
 
 const PetHeader = () => {
     return (
 
-        <div>
-            <h1>Pet Shelter</h1>
-            <p><Link to ="/petshelter/">See All Pets</Link></p>
+        <div className="header">
+            <h1><MdPets />Pet Shelter</h1>
+            <Link className="home" to ="/petshelter/"><FaHome /> See All Pets</Link>
         </div>
     )
 }

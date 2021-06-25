@@ -1,8 +1,58 @@
+
+
+.formInput{
+  display: flex;
+  justify-content:space-between;
+}
+
+label,select{
+  width: 400px;
+}
+
+.updateButton, .editPage, .createPage{
+  text-align: center;
+}
+.petForm {
+  margin: auto;
+  width: 300px;
+}
+
+.home {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+button {
+  box-shadow: 2px 2px 2px black;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.pet {
+  display: flex;
+  margin: auto;
+  background-color: lightblue;
+  flex-direction: column;
+  width: 500px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px black;
+  font-weight: 450;
+  text-align: center;
+}
+
 .imgpet{
   height: 300px;
 }
-
-
 .error-text{
   color: red;
   margin-left: 25px;
@@ -10,7 +60,8 @@
 }
 
 .App {
-  text-align: center;
+margin: auto;
+width: 500px;
 }
 
 .App-logo {

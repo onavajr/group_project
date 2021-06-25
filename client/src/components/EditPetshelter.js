@@ -57,7 +57,7 @@ const EditPetShelter = (props) => {
 
     return (
         <div>
-            <h1>Update Pet Information</h1>
+            <h1 className="editPage" >Update Pet Information</h1>
             <PetForm
                 submitHandler={submitHandler}
                 errors={ errors }

@@ -29,7 +29,7 @@ const DetailPetshelter = (props) => {
     }
     return (
         <div>
-            <h1>Pet Details</h1>
+            <h1 className="createPage">Pet Details</h1>
             <h1>{pet.petname}</h1>
             <h3>Pet Type: {pet.pettype}</h3>
             

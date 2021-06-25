@@ -33,24 +33,37 @@ const AllPetshelter = (props) => {
 
     return (
         <div className="pet">
-            <h3>These pets are looking for a good home</h3>
-            <div>
-                {
-                    allPets.map(( pet, index) =>(
-                    <div key={ index }>
-                        <p>{ pet.petname }</p>
-                        <p>{ pet.pettype }</p>
-                        <div>
-                            <p><Link to = {"/petshelter/" + pet._id}>Details</Link></p> |
-                            <p><Link to = {"/petshelter/"+ pet._id + '/edit'}>Edit</Link></p> |
-                            <br/>
-                            <br/> 
-                                <button onClick={() => deletePet(pet._id)}>Delete</button>
-                        </div>
-                            </div>
-                            ))
-                }
-            </div>
+            <h2>These pets are looking for a good home</h2>
+            <br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pet Name</th>
+                        <th>Pet Type</th>
+                        <th>Edit or Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        allPets.map(( pet, index) =>(
+                            <tr key={ index }>
+                                <td>
+                                    { pet.petname }
+                                </td>
+                                <td>
+                                    { pet.pettype }
+                                </td>
+                                <td>
+                                    <Link to = {"/petshelter/" + pet._id}>Details</Link> | 
+                                    <Link to = {"/petshelter/"+ pet._id + '/edit'}> Edit
+                                    </Link> | <button onClick={() => deletePet(pet._id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+                
         </div>
     )
 }
