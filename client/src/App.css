@@ -1,4 +1,38 @@
 
+/* *{
+  outline: 1px solid red;
+} */
+
+table {
+  padding: 5px;
+}
+.petPage{
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px black;
+  padding: 0px 5px 20px 20px;
+  margin-bottom: 50px;
+
+}
+
+.petDescription{
+  text-align: left;
+  width: 180px;
+}
+
+.petBio{
+  text-align: left;
+
+}
+
+.petDetails{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  
+}
+
+
 
 .formInput{
   display: flex;
@@ -9,7 +43,7 @@ label,select{
   width: 400px;
 }
 
-.updateButton, .editPage, .createPage{
+.updateButton, .editPage{
   text-align: center;
 }
 .petForm {
@@ -26,7 +60,7 @@ label,select{
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content:space-between;
   align-items: center;
 }
 
@@ -51,8 +85,9 @@ table, th, td {
 }
 
 .imgpet{
-  height: 300px;
+  width: 300px;
 }
+
 .error-text{
   color: red;
   margin-left: 25px;
@@ -62,6 +97,7 @@ table, th, td {
 .App {
 margin: auto;
 width: 500px;
+background-image: ;
 }
 
 .App-logo {

@@ -28,22 +28,31 @@ const DetailPetshelter = (props) => {
             });
     }
     return (
-        <div>
-            <h1 className="createPage">Pet Details</h1>
-            <h1>{pet.petname}</h1>
-            <h3>Pet Type: {pet.pettype}</h3>
-            
-            <h3>Skills: </h3>
-            <p>{pet.firstskill}</p>
-            <p>{pet.secondskill}</p>
-            <p>{pet.thirdskill}</p>
-            <h3>Description:</h3>
-            <p>{pet.petdescription}</p>
+
+        <div className="petPage">
+            <h1 className="editPage">Pet Details</h1>
+            <div className="petDetails">
+                <div className="petBio">
+                    <h2>Name: {pet.petname}</h2>
+                    <h3>Pet Type: {pet.pettype}</h3>
+                    <h3>Skills: </h3>
+                    <p>{pet.firstskill}</p>
+                    <p>{pet.secondskill}</p>
+                    <p>{pet.thirdskill}</p>
+                </div>
+                <div className="petDescription">
+                    <h3>Description:</h3>
+                    <p>{pet.petdescription}</p>
+                    
+                    </div>
+                
+            </div>
             <img src={pet.petimage} alt={pet.name} className="imgpet"/>
-            <br/>
-            <br/>
-            <button onClick={ deletePet }>Adapt {pet.petname}</button>
+            <br />
+            <br />
+            <button className="createButton" onClick={ deletePet }>Adapt {pet.petname}</button>
         </div>
+
     )
 }
 
