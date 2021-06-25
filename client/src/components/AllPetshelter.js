@@ -33,28 +33,24 @@ const AllPetshelter = (props) => {
 
     return (
         <div className="pet">
-            <div>
-                <h1>Pet Shelter</h1>
-                <p><a href="">Add a pet to the Shelter</a></p>
-            </div>
             <h3>These pets are looking for a good home</h3>
-                <div>
-                    {
-                        allPets.map(( pet, index) =>(
-                            <div key={ index }>
-                                <p>{ pet.petname }</p>
-                                <p>{ pet.pettype }</p>
-                                <div>
-                                    <p><Link to = {"/petshelter/" + pet._id}>Details</Link></p> |
-                                    <p><Link to = {"/petshelter/"+ pet._id + '/edit'}>Edit</Link></p> |
-                                    <br/>
-                                    <br/> 
-                                    <button onClick={() => deletePet(pet._id)}>Delete</button>
-                                </div>
+            <div>
+                {
+                    allPets.map(( pet, index) =>(
+                    <div key={ index }>
+                        <p>{ pet.petname }</p>
+                        <p>{ pet.pettype }</p>
+                        <div>
+                            <p><Link to = {"/petshelter/" + pet._id}>Details</Link></p> |
+                            <p><Link to = {"/petshelter/"+ pet._id + '/edit'}>Edit</Link></p> |
+                            <br/>
+                            <br/> 
+                                <button onClick={() => deletePet(pet._id)}>Delete</button>
+                        </div>
                             </div>
                             ))
-                        }
-                </div>
+                }
+            </div>
         </div>
     )
 }

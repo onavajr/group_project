@@ -4,10 +4,12 @@ import AllPetshelter from './components/AllPetshelter';
 import CreatePetShelter from './components/CreatePetshelter';
 import DetailPetshelter from './components/DetailPetshelter';
 import EditPetshelter from './components/EditPetshelter';
+import PetHeader from './components/PetHeader';
 
 function App() {
   return (
     <div className="App">
+      <PetHeader />
       <Router>
         <AllPetshelter path="/petshelter" />
         <CreatePetShelter path="/petshelter/new" />
