@@ -12,7 +12,8 @@ const CreatePetShelter = (props) => {
         firstskill: "",
         secondskill: "",
         thirdskill:"",
-        petimage: ""
+        petimage: "",
+        likes: ""
     });
     
     const[errors, setErrors] = useState({

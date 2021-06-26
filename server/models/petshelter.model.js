@@ -49,7 +49,12 @@ const PetshelterSchema = new mongoose.Schema({
             'Talking'
         ]
     },
-    petimage: { type: String },
+    petimage: {
+        type: String },
+
+    likes: {
+        type: Number,
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Petshelter', PetshelterSchema);

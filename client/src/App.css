@@ -1,7 +1,5 @@
 
-/* *{
-  outline: 1px solid red;
-} */
+
 
 table {
   padding: 5px;
@@ -97,7 +95,6 @@ table, th, td {
 .App {
 margin: auto;
 width: 500px;
-background-image: ;
 }
 
 .App-logo {
