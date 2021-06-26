@@ -1,6 +1,4 @@
 
-
-
 table {
   padding: 5px;
 }
@@ -46,7 +44,7 @@ label,select{
 }
 .petForm {
   margin: auto;
-  width: 300px;
+  width: 350px;
 }
 
 .home {
