@@ -24,7 +24,11 @@ const PetshelterSchema = new mongoose.Schema({
             'Eating',
             'Jumping',
             'Flying',
-            'Talking'
+            'Talking',
+            'Running',
+            'Hunting',
+            'Swimming',
+            'Running'
         ]
     },
     secondskill: {
@@ -35,7 +39,11 @@ const PetshelterSchema = new mongoose.Schema({
             'Eating',
             'Jumping',
             'Flying',
-            'Talking'
+            'Talking',
+            'Running',
+            'Hunting',
+            'Swimming',
+            'Running'
         ]
     },
     thirdskill: {
@@ -46,7 +54,11 @@ const PetshelterSchema = new mongoose.Schema({
             'Eating',
             'Jumping',
             'Flying',
-            'Talking'
+            'Talking',
+            'Running',
+            'Hunting',
+            'Swimming',
+            'Running'
         ]
     },
     petimage: {

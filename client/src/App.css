@@ -1,4 +1,56 @@
 
+/* * {
+  outline: 1px solid red;
+} */
+
+.frontPage{
+  text-align: center;
+  margin-top: 50px;
+}
+
+small{
+  color: red;
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  background-color: #912619;
+  color: white;
+  width: 140px;
+}
+.textBox{
+  width: 800px;
+}
+
+.addButton, .editButton {
+  background-color: #2277EA;
+  color: white;
+  width: 140px;
+  padding: 2px;
+  font-weight: bold;
+  font-family: cursive;
+  font-size: medium;
+  margin-left: 60px;
+}
+
+.createForm, .editForm {
+  border: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.listHeader, .editHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 table {
   padding: 5px;
 }
@@ -28,11 +80,11 @@ table {
   
 }
 
-
-
 .formInput{
   display: flex;
   justify-content:space-between;
+  margin: 20px;
+
 }
 
 label,select{
@@ -43,8 +95,8 @@ label,select{
   text-align: center;
 }
 .petForm {
-  margin: auto;
-  width: 350px;
+  width: 500px;
+  
 }
 
 .home {

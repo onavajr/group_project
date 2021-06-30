@@ -9,9 +9,9 @@ import PetHeader from './components/PetHeader';
 function App() {
   return (
     <div className="App">
-      <PetHeader />
       <Router>
-        <AllPetshelter path="/petshelter" />
+        <PetHeader default/>
+        <AllPetshelter path="/petshelter/" />
         <CreatePetShelter path="/petshelter/new" />
         <DetailPetshelter path="/petshelter/:id" />
         <EditPetshelter path="/petshelter/:id/edit"/>

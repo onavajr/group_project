@@ -2,6 +2,10 @@ import React, {useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 import PetForm from './PetForm';
+import { MdPets } from 'react-icons/md';
+import { BsPencil } from 'react-icons/bs';
+import DetailPetshelter from './DetailPetshelter';
+
 
 
 const EditPetShelter = (props) => {
@@ -57,15 +61,24 @@ const EditPetShelter = (props) => {
 
     return (
         <div>
-            <h1 className="editPage" >Update Pet Information</h1>
-            <PetForm
-                submitHandler={submitHandler}
-                errors={ errors }
-                pet={ editPet}
-                setPet={setEditPet}
-                labelButton = { "Update Pet"} />
+            <div className="editHeader">
+                <h1><MdPets />Pet Shelter</h1>
+                <Link to = {'/petshelter/'}>Back to Home</Link>
+            </div>
+            <h2>Edit {editPet.petname}</h2>
+            <div className="editForm">
+                <PetForm
+                    submitHandler={submitHandler}
+                    errors={ errors }
+                    pet={ editPet}
+                    setPet={setEditPet}
+                    labelButton = { "Update Pet"} />
+                <button className = "editButton" onClick={ submitHandler}><BsPencil /> Update Pet</button>
+            </div>
+            
             
         </div>
+        
     )
 }
 

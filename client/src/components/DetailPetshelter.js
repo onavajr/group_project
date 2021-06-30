@@ -1,6 +1,8 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
+import { AiOutlineHome } from 'react-icons/ai';
+import { MdPets } from 'react-icons/md';
 
 const DetailPetshelter = (props) => {
     const { id } = props;
@@ -28,30 +30,41 @@ const DetailPetshelter = (props) => {
             });
     }
     return (
-
-        <div className="petPage">
-            <h1 className="editPage">Pet Details</h1>
-            <div className="petDetails">
-                <div className="petBio">
-                    <h2>Name: {pet.petname}</h2>
-                    <h3>Pet Type: {pet.pettype}</h3>
-                    <h3>Skills: </h3>
-                    <p>{pet.firstskill}</p>
-                    <p>{pet.secondskill}</p>
-                    <p>{pet.thirdskill}</p>
-                </div>
-                <div className="petDescription">
-                    <h3>Description:</h3>
-                    <p>{pet.petdescription}</p>
-                    
-                    </div>
-                
+        <div>
+            <div className="listHeader">
+                <h1><MdPets />Pet Shelter</h1>
+                <Link to = {'/petshelter/'}>Back to Home</Link>
             </div>
-            <img src={pet.petimage} alt={pet.name} className="imgpet"/>
-            <br />
-            <br />
-            <button className="createButton" onClick={ deletePet }>Adapt {pet.petname}</button>
+            <div className="detailHeader">
+                    <h2 className="editPage">Details about: {pet.petname}</h2>
+                    <div>
+                    <button className="deleteButton" onClick={ deletePet }><AiOutlineHome /> Adapt {pet.petname}</button>
+                    </div>
+                    
+                </div>
+            <div className="petPage">
+                <div className="petDetails">
+                    <div className="petBio">
+                        <h4>Pet Type: {pet.pettype}</h4>
+                        <h4>Skills: </h4>
+                        <p>{pet.firstskill}</p>
+                        <p>{pet.secondskill}</p>
+                        <p>{pet.thirdskill}</p>
+                    </div>
+                    <div className="petDescription">
+                        <h4>Description:</h4>
+                        <p>{pet.petdescription}</p>
+                        
+                        </div>
+                    
+                </div>
+                <img src={pet.petimage} alt={pet.name} className="imgpet"/>
+                <br />
+                <br />
+            
+            </div>
         </div>
+        
 
     )
 }

@@ -46,14 +46,14 @@ const PetForm   = (props) => {
             <form onSubmit={submitHandler}>
                 <div  className="petForm">
                     <div  className="formInput">
-                        <label>Name: </label>
+                        <label>Pet Name: </label>
                         <input
-                            className="formLabel"
+                            className="textBox"
                             type="text"
                             name="petname"
                             value={pet.petname}
                             onChange={(e) => inputChange(e)}
-                        /><br/>
+                        />
                         {
                             pet.petname && pet.petname.length > 0 && pet.petname.length < 3 ?
                             <span className="error-text"> Pet name must be at leats 3 characters long</span>
@@ -66,14 +66,14 @@ const PetForm   = (props) => {
                         }
                     </div>
                     <div  className="formInput">
-                        <label>Pet Type: </label>
+                        <label >Pet Type: </label>
                         <input
-                            className="formInput"
+                            className="textBox"
                             type="text"
                             name="pettype"
                             value={pet.pettype}
                             onChange={(e) => inputChange(e)}
-                        /><br/>
+                        />
                         {
                             pet.pettype && pet.pettype.length > 0 && pet.pettype.length < 3 ?
                             <span className="error-text"> Pet type must be at leats 3 characters long</span>
@@ -86,14 +86,14 @@ const PetForm   = (props) => {
                         }
                     </div>
                     <div  className="formInput">
-                        <label>Description: </label>
+                        <label className="formLabe">Description: </label>
                         <input
-                            className="formInput"
+                            className="textBox"
                             type="text"
                             name="petdescription"
                             value={pet.petdescription}
                             onChange={(e) => inputChange(e)}
-                        /><br/>
+                        />
                         {
                             pet.petdescription && pet.petdescription.length > 0 && pet.petdescription.length < 3 ?
                             <span className="error-text"> Description must be at leats 3 characters long</span>
@@ -106,15 +106,17 @@ const PetForm   = (props) => {
                         } 
                     </div>
                     <div  className="formInput">
-                    <label>First Skill: </label>
+                    <label className="formLabel">First Skill: </label>
                         <select
-                            className="formInput"
+                            className="textBox"
                             type="text"
                             name="firstskill"
                             value={pet.sfirstskill}
                             onChange={(e) => inputChange(e)}
                         >
+                            <option value="">Select Skill</option>
                             <option value="Swimming">Swimming</option>
+                            <option value="Running">Running</option>
                             <option value="Eating">Eating</option>
                             <option value="Sleeping">Sleeping</option>
                             <option value="Jumping">Jumping</option>
@@ -122,7 +124,6 @@ const PetForm   = (props) => {
                             <option value="Talking">Talking</option>
                             
                         </select>
-                        <br/>
                         {
                             errors.firstskill ?
                                 <span className="error-text"> {errors.firstskill.message}</span>
@@ -130,22 +131,23 @@ const PetForm   = (props) => {
                         }  
                     </div>
                     <div  className="formInput">
-                        <label>Second Skill: </label>
+                        <label className="formLabel">Second Skill: </label>
                         <select
-                            className="formInput"
+                            className="textBox"
                             type="text"
                             name="secondskill"
                             value={pet.secondskill}
                             onChange={(e) => inputChange(e)}
                         >
+                            <option value="">Select Skill</option>
                             <option value="Eating">Eating</option>
                             <option value="Sleeping">Sleeping</option>
+                            <option value="Running">Running</option>
                             <option value="Jumping">Jumping</option>
                             <option value="Flying">Flying</option>
                             <option value="Talking">Talking</option>
                             <option value="Swimming">Swimming</option>
                         </select>
-                        <br/>
                         {
                             errors.secondskill ?
                                 <span className="error-text"> {errors.secondskill.message}</span>
@@ -153,22 +155,23 @@ const PetForm   = (props) => {
                         }
                     </div>
                     <div  className="formInput">
-                    <label>Third Skill: </label>
+                    <label className="formLabel">Third Skill: </label>
                         <select
+                            className="textBox"
                             type="text"
                             name="thirdskill"
                             value={pet.thirdskill}
                             onChange={(e) => inputChange(e)}
                         >
+                            <option value="">Select Skill</option>
+                            <option value="Running">Running</option>
                             <option value="Talking">Talking</option>
                             <option value="Eating">Eating</option>
                             <option value="Sleeping">Sleeping</option>
                             <option value="Jumping">Jumping</option>
                             <option value="Flying">Flying</option>
-                            
                             <option value="Swimming">Swimming</option>
                         </select>
-                        <br/>
                         {
                             errors.thirdskill ?
                                 <span className="error-text"> {errors.thirdskill.message}</span>
@@ -176,9 +179,9 @@ const PetForm   = (props) => {
                         }
                     </div>
                     <div  className="formInput">
-                        <label>Image URL: </label>
+                        <label className="formLabel">Image URL: </label>
                         <input
-                            className="formInput"
+                            className="textBox"
                             type="text"
                             name="petimage"
                             value={pet.petimage}
@@ -187,10 +190,10 @@ const PetForm   = (props) => {
                     </div>
                     <br/>
                         
-                    <div className="updateButton" >
+                    {/* <div className="updateButton" >
                     <button type="submit">{ labelButton }</button>
-                    </div>
-                    </div>
+                    </div> */}
+                </div>
             </form>
         </div>
     )

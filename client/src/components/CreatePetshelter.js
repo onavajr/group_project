@@ -2,6 +2,8 @@ import React, {useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 import PetForm from './PetForm';
+import { BsArrowBarUp } from 'react-icons/bs';
+import { MdPets } from 'react-icons/md';
 
 
 const CreatePetShelter = (props) => {
@@ -44,13 +46,20 @@ const CreatePetShelter = (props) => {
 
     return (
         <div>
-            <h1>Add Pet in the Shelter</h1>
-            <PetForm
+            <div className="listHeader">
+                <h1><MdPets />Pet Shelter</h1>
+                <Link to = {'/petshelter/'}>Back to Home</Link>
+            </div>
+            <div className="createForm">
+                <PetForm
                 submitHandler={submitHandler}
                 errors={ errors }
                 pet={ newPet}
                 setPet={setNewPet}
-                labelButton={ "Add Pet" }/>
+                // labelButton={ "Add Pet" }
+                />
+                <button className ="addButton" onClick={ submitHandler}><BsArrowBarUp/> Add Pet</button>
+            </div>
             
         </div>
     )
