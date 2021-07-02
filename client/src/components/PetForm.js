@@ -111,24 +111,23 @@ const PetForm   = (props) => {
                             className="textBox"
                             type="text"
                             name="firstskill"
-                            value={pet.sfirstskill}
+                            value={pet.firstskill}
                             onChange={(e) => inputChange(e)}
                         >
-                            <option value="">Select Skill</option>
-                            <option value="Swimming">Swimming</option>
+                            <option></option>
                             <option value="Running">Running</option>
+                            <option value="Talking">Talking</option>
                             <option value="Eating">Eating</option>
                             <option value="Sleeping">Sleeping</option>
                             <option value="Jumping">Jumping</option>
                             <option value="Flying">Flying</option>
-                            <option value="Talking">Talking</option>
-                            
+                            <option value="Swimming">Swimming</option>
                         </select>
                         {
                             errors.firstskill ?
                                 <span className="error-text"> {errors.firstskill.message}</span>
                                 :null
-                        }  
+                        }
                     </div>
                     <div  className="formInput">
                         <label className="formLabel">Second Skill: </label>
@@ -139,7 +138,7 @@ const PetForm   = (props) => {
                             value={pet.secondskill}
                             onChange={(e) => inputChange(e)}
                         >
-                            <option value="">Select Skill</option>
+                            <option></option>
                             <option value="Eating">Eating</option>
                             <option value="Sleeping">Sleeping</option>
                             <option value="Running">Running</option>
@@ -163,7 +162,7 @@ const PetForm   = (props) => {
                             value={pet.thirdskill}
                             onChange={(e) => inputChange(e)}
                         >
-                            <option value="">Select Skill</option>
+                            <option></option>
                             <option value="Running">Running</option>
                             <option value="Talking">Talking</option>
                             <option value="Eating">Eating</option>

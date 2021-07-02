@@ -13,7 +13,7 @@ const PetshelterSchema = new mongoose.Schema({
      },
     petdescription: {
         type: String,
-        required: [ true, "Pet description required"],
+        required: [ true, "Description required"],
         minlength: [ 3, "Pet name is atlease 3 characters long"]
     },
     firstskill: {
