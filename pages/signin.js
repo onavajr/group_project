@@ -10,9 +10,9 @@ const Signin = () => {
 
         <form className="mx-auto my-4" style={{maxWidth: '500px'}}>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+            <label htmlFor="exampleInputEmail1" className="form-label" placeholder="Enter email">Email address</label>
             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-            <div id="emailHelp" className="form-text">Your information is secure protected</div>
+            <div id="emailHelp" className="form-text">Your information is secure and protected</div>
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
