@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {useState, useContext} from 'react'
 import valid from '../utils/valid'
 import {DataContext} from '../store/GlobalState'
+import { postData } from '../utils/fetchData'
 
 
 const Register = () => {
@@ -22,12 +23,15 @@ const Register = () => {
     dispatch({type: 'NOTIFY', payload: {}})
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     const errMsg = valid(name,email,password,cf_password)
     if(errMsg) return dispatch({type: 'NOTIFY', payload: {error:errMsg}})
 
-    dispatch({type: 'NOTIFY', payload: {success: 'Successfully Registered'}})
+    dispatch({type: 'NOTIFY', payload: {loading: true}})
+
+    const res = await postData('auth/register', userData)
+    console.log(res)
   }
     return(
       <div>
