@@ -33,6 +33,7 @@ const Register = () => {
     const res = await postData('auth/register', userData)
     console.log(res)
   }
+  
     return(
       <div>
         <Head>

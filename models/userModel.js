@@ -1,6 +1,6 @@
-import { Mongoose } from "mongoose";   
+import { mongoose } from "mongoose";   
 
-const userSchema = new Mongoose.userSchema({
+const userSchema = new mongoose.userSchema({
     name: {
         type: String,
         require: true
@@ -28,6 +28,6 @@ const userSchema = new Mongoose.userSchema({
     },
 },{timestamps: true})
 
-let Dataset = Mongoose.models.user || Mongoose.model('user', userSchema)
+let Dataset = mongoose.models.user || mongoose.model('user', userSchema)
 
 export default Dataset;
