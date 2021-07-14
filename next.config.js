@@ -1,6 +1,6 @@
 module.exports = {
   env: {
       "BASE_URL": "http://localhost:3000",
-      "MONGODB_URL": "mongodb+srv://galunggong:galunggong123>@cluster0.3xd8t.mongodb.net/next_ecommerce?retryWrites=true&w=majority"
+      "MONGODB_URL": "mongodb+srv://galunggong18:Ogagako_18@cluster0.o4tmo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
   }
 }

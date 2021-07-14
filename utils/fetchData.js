@@ -5,7 +5,8 @@ export const getData = async (url, token) => {
         method: 'GET',
         headers: {
             'Authorization': token
-        }
+        },
+        body:JSON.stringify(post)
     })
 
     const data = await res.json()
@@ -22,7 +23,7 @@ export const postData = async (url, post, token) => {
         body: JSON.stringify(post)
     })
 
-    
+    const data = await res.json()
     return data
 }
 

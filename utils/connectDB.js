@@ -1,19 +1,20 @@
 import mongoose from 'mongoose'
 
 const connectDB = () => {
-    if(mongoose.connection[0].readyState){
-        console.log('Connection Success!!')
+    if(mongoose.connections[0].readyState){
+        console.log('Already connected.')
         return;
     }
     mongoose.connect(process.env.MONGODB_URL, {
         useCreateIndex: true,
         useFindAndModify: false,
         useNewUrlParser: true,
-        UseUnifiedTopology: true
+        useUnifiedTopology: true
     }, err => {
         if(err) throw err;
-        console.log('Connected to database')
+        console.log('Connected to mongodb.')
     })
 }
 
-export default connectDB;
+
+export default connectDB

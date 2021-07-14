@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
-import {DataProvider} from '../store/GlobalState'
+import { DataProvider } from '../store/GlobalState'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
     </DataProvider>
-   
   )
 }
 
