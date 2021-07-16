@@ -1,20 +1,20 @@
 import './App.css';
 import { Router } from '@reach/router';
-import AllPetshelter from './components/AllPetshelter';
-import CreatePetShelter from './components/CreatePetshelter';
-import DetailPetshelter from './components/DetailPetshelter';
-import EditPetshelter from './components/EditPetshelter';
-import PetHeader from './components/PetHeader';
+import AllProductmanager from './components/AllProductmanager';
+import CreateProductShelter from './components/CreateProductmanager';
+import DetailProductmanager from './components/DetailProductmanager';
+import EditProductmanager from './components/EditProductmanager';
+import ProductHeader from './components/ProductHeader';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <PetHeader default/>
-        <AllPetshelter path="/petshelter/" />
-        <CreatePetShelter path="/petshelter/new" />
-        <DetailPetshelter path="/petshelter/:id" />
-        <EditPetshelter path="/petshelter/:id/edit"/>
+        <ProductHeader default/>
+        <AllProductmanager path="/productmanager/" />
+        <CreateProductShelter path="/productmanager/new" />
+        <DetailProductmanager path="/productmanager/:id" />
+        <EditProductmanager path="/productmanager/:id/edit"/>
       </Router>
 
     </div>

@@ -1,36 +1,36 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
-import PetForm from './PetForm';
-import { MdPets } from 'react-icons/md';
+import ProductForm from './ProductForm';
+import { IoStorefrontSharp } from 'react-icons/io5';
 import { BsPencil } from 'react-icons/bs';
-import DetailPetshelter from './DetailPetshelter';
+import DetailProductmanager from './DetailProductmanager';
 
 
 
-const EditPetShelter = (props) => {
+const EditProductShelter = (props) => {
     const { id } = props;
-    const [ editPet, setEditPet] = useState({});
+    const [ editProduct, setEditProduct] = useState({});
 
     useEffect(()=>{
-        axios.get("http://localhost:8000/api/petshelter/" + id)
+        axios.get("http://localhost:8000/api/productmanager/" + id)
             .then((res)=>{
                 console.log(res.data);
-                setEditPet(res.data);
+                setEditProduct(res.data);
             })
             .catch((err) =>{
                 console.log(err);
-                navigate("/petshelter");
+                navigate("/productmanager");
             });
     },[]);
-    // const [ newPet, setNewPet ] = useState({
-    //     petname: "",
-    //     pettype: "",
-    //     petdescription: "",
+    // const [ newProduct, setNewProduct ] = useState({
+    //     productname: "",
+    //     producttype: "",
+    //     productdescription: "",
     //     firstskill: "",
     //     secondskill: "",
     //     thirdskill:"",
-    //     petimage: ""
+    //     productimage: ""
     // });
     
     const[errors, setErrors] = useState({
@@ -39,10 +39,10 @@ const EditPetShelter = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:8000/api/petshelter/' + id, editPet)
+        axios.put('http://localhost:8000/api/productmanager/' + id, editProduct)
             .then((res) =>{
                 console.log(res.data);
-                navigate('/petshelter/' + id);
+                navigate('/productmanager/' + id);
             })
             .catch((err) => {
                 console.log(JSON.stringify(err));
@@ -54,26 +54,26 @@ const EditPetShelter = (props) => {
     //     console.log("e.target.name " + e.target.name);
     //     console.log("e.target.value " + e.target.value);
 
-    //     let newStateObject = {...newPet};
+    //     let newStateObject = {...newProduct};
     //     newStateObject[e.target.name] = e.target.value;
-    //     setNewPet(newStateObject);
+    //     setNewProduct(newStateObject);
     // }
 
     return (
         <div>
             <div className="editHeader">
-                <h1><MdPets />Pet Shelter</h1>
-                <Link to = {'/petshelter/'}>Back to Home</Link>
+                <h1><IoStorefrontSharp />Product Shelter</h1>
+                <Link to = {'/productmanager/'}>Back to Home</Link>
             </div>
-            <h2>Edit {editPet.petname}</h2>
+            <h2>Edit {editProduct.productname}</h2>
             <div className="editForm">
-                <PetForm
+                <ProductForm
                     submitHandler={submitHandler}
                     errors={ errors }
-                    pet={ editPet}
-                    setPet={setEditPet}
-                    labelButton = { "Update Pet"} />
-                <button className = "editButton" onClick={ submitHandler}><BsPencil /> Update Pet</button>
+                    product={ editProduct}
+                    setProduct={setEditProduct}
+                    labelButton = { "Update Product"} />
+                <button className = "editButton" onClick={ submitHandler}><BsPencil /> Update Product</button>
             </div>
             
             
@@ -84,13 +84,13 @@ const EditPetShelter = (props) => {
 
 
 // {
-//     "petname": "Putol",
-//     "pettype": "Pooch",
-//     "petdescription": "superdog that can do evrything what you ask for, including laundry!",
+//     "productname": "Putol",
+//     "producttype": "Pooch",
+//     "productdescription": "superdog that can do evrything what you ask for, including laundry!",
 //     "firstskill": "Jumping",
 //     "secondskill": "Eating",
 //     "thirdskill": "Flying",
-//     "petimage": "https://images-na.ssl-images-amazon.com/images/I/81VtHOiH%2B3L._SL1500_.jpg"
+//     "productimage": "https://images-na.ssl-images-amazon.com/images/I/81VtHOiH%2B3L._SL1500_.jpg"
 // }
 
 // 'Sleeping',
@@ -99,4 +99,4 @@ const EditPetShelter = (props) => {
 //             'Flying',
 //             'Talking'
 
-export default EditPetShelter;
+export default EditProductShelter;

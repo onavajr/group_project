@@ -2,17 +2,17 @@ import React, {useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
 
-const PetForm   = (props) => { 
-    const { submitHandler, errors, pet, setPet, labelButton } = props;
+const ProductForm   = (props) => { 
+    const { submitHandler, errors, product, setProduct, labelButton } = props;
 
-    // const [ pet, setPet ] = useState({
-    //     petname: "",
-    //     pettype: "",
-    //     petdescription: "",
+    // const [ product, setProduct ] = useState({
+    //     productname: "",
+    //     producttype: "",
+    //     productdescription: "",
     //     firstskill: "",
     //     secondskill: "",
     //     thirdskill:"",
-    //     petimage: ""
+    //     productimage: ""
     // });
     
     // const[errors, setErrors] = useState({
@@ -21,10 +21,10 @@ const PetForm   = (props) => {
 
     // const submitHandler = (e) => {
     //     e.preventDefault();
-    //     axios.post('http://localhost:8000/api/petshelter/new', pet)
+    //     axios.post('http://localhost:8000/api/productmanager/new', product)
     //         .then((res) =>{
     //             console.log(res.data);
-    //             navigate('/petshelter');
+    //             navigate('/productmanager');
     //         })
     //         .catch((err) => {
     //             console.log(JSON.stringify(err));
@@ -36,52 +36,52 @@ const PetForm   = (props) => {
         console.log("e.target.name " + e.target.name);
         console.log("e.target.value " + e.target.value);
 
-        let newStateObject = {...pet};
+        let newStateObject = {...product};
         newStateObject[e.target.name] = e.target.value;
-        setPet(newStateObject);
+        setProduct(newStateObject);
     }
 
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <div  className="petForm">
+                <div  className="productForm">
                     <div  className="formInput">
-                        <label>Pet Name: </label>
+                        <label>Product Name: </label>
                         <input
                             className="textBox"
                             type="text"
-                            name="petname"
-                            value={pet.petname}
+                            name="productname"
+                            value={product.productname}
                             onChange={(e) => inputChange(e)}
                         />
                         {
-                            pet.petname && pet.petname.length > 0 && pet.petname.length < 3 ?
-                            <span className="error-text"> Pet name must be at leats 3 characters long</span>
+                            product.productname && product.productname.length > 0 && product.productname.length < 3 ?
+                            <span className="error-text"> Product name must be at leats 3 characters long</span>
                             :null
                         }
                         {
-                            errors.petname ?
-                                <span className="error-text"> {errors.petname.message}</span>
+                            errors.productname ?
+                                <span className="error-text"> {errors.productname.message}</span>
                                 :null
                         }
                     </div>
                     <div  className="formInput">
-                        <label >Pet Type: </label>
+                        <label >Product Type: </label>
                         <input
                             className="textBox"
                             type="text"
-                            name="pettype"
-                            value={pet.pettype}
+                            name="producttype"
+                            value={product.producttype}
                             onChange={(e) => inputChange(e)}
                         />
                         {
-                            pet.pettype && pet.pettype.length > 0 && pet.pettype.length < 3 ?
-                            <span className="error-text"> Pet type must be at leats 3 characters long</span>
+                            product.producttype && product.producttype.length > 0 && product.producttype.length < 3 ?
+                            <span className="error-text"> Product type must be at leats 3 characters long</span>
                             :null
                         }
                         {
-                            errors.pettype ?
-                                <span className="error-text"> {errors.pettype.message}</span>
+                            errors.producttype ?
+                                <span className="error-text"> {errors.producttype.message}</span>
                                 :null
                         }
                     </div>
@@ -90,18 +90,18 @@ const PetForm   = (props) => {
                         <input
                             className="textBox"
                             type="text"
-                            name="petdescription"
-                            value={pet.petdescription}
+                            name="productdescription"
+                            value={product.productdescription}
                             onChange={(e) => inputChange(e)}
                         />
                         {
-                            pet.petdescription && pet.petdescription.length > 0 && pet.petdescription.length < 3 ?
+                            product.productdescription && product.productdescription.length > 0 && product.productdescription.length < 3 ?
                             <span className="error-text"> Description must be at leats 3 characters long</span>
                             :null
                         }
                         {
-                            errors.petdescription ?
-                                <span className="error-text"> {errors.petdescription.message}</span>
+                            errors.productdescription ?
+                                <span className="error-text"> {errors.productdescription.message}</span>
                                 :null
                         } 
                     </div>
@@ -111,7 +111,7 @@ const PetForm   = (props) => {
                             className="textBox"
                             type="text"
                             name="firstskill"
-                            value={pet.firstskill}
+                            value={product.firstskill}
                             onChange={(e) => inputChange(e)}
                         >
                             <option></option>
@@ -135,7 +135,7 @@ const PetForm   = (props) => {
                             className="textBox"
                             type="text"
                             name="secondskill"
-                            value={pet.secondskill}
+                            value={product.secondskill}
                             onChange={(e) => inputChange(e)}
                         >
                             <option></option>
@@ -159,7 +159,7 @@ const PetForm   = (props) => {
                             className="textBox"
                             type="text"
                             name="thirdskill"
-                            value={pet.thirdskill}
+                            value={product.thirdskill}
                             onChange={(e) => inputChange(e)}
                         >
                             <option></option>
@@ -182,8 +182,8 @@ const PetForm   = (props) => {
                         <input
                             className="textBox"
                             type="text"
-                            name="petimage"
-                            value={pet.petimage}
+                            name="productimage"
+                            value={product.productimage}
                             onChange={(e) => inputChange(e)}
                         />  
                     </div>
@@ -200,13 +200,13 @@ const PetForm   = (props) => {
 
 
 // {
-//     "petname": "Putol",
-//     "pettype": "Pooch",
-//     "petdescription": "superdog that can do evrything what you ask for, including laundry!",
+//     "productname": "Putol",
+//     "producttype": "Pooch",
+//     "productdescription": "superdog that can do evrything what you ask for, including laundry!",
 //     "firstskill": "Jumping",
 //     "secondskill": "Eating",
 //     "thirdskill": "Flying",
-//     "petimage": "https://images-na.ssl-images-amazon.com/images/I/81VtHOiH%2B3L._SL1500_.jpg"
+//     "productimage": "https://images-na.ssl-images-amazon.com/images/I/81VtHOiH%2B3L._SL1500_.jpg"
 // }
 
 // 'Sleeping',
@@ -215,4 +215,4 @@ const PetForm   = (props) => {
 //             'Flying',
 //             'Talking'
 
-export default PetForm;
+export default ProductForm;

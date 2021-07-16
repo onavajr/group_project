@@ -1,20 +1,20 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios';
 import {Link, navigate} from '@reach/router';
-import PetForm from './PetForm';
+import ProductForm from './ProductForm';
 import { BsArrowBarUp } from 'react-icons/bs';
-import { MdPets } from 'react-icons/md';
+import { IoStorefrontSharp } from 'react-icons/io5';
 
 
-const CreatePetShelter = (props) => {
-    const [ newPet, setNewPet ] = useState({
-        petname: "",
-        pettype: "",
-        petdescription: "",
+const CreateProductShelter = (props) => {
+    const [ newProduct, setNewProduct ] = useState({
+        productname: "",
+        producttype: "",
+        productdescription: "",
         firstskill: "",
         secondskill: "",
         thirdskill:"",
-        petimage: "",
+        productimage: "",
         likes: ""
     });
     
@@ -24,10 +24,10 @@ const CreatePetShelter = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/petshelter/new', newPet)
+        axios.post('http://localhost:8000/api/productmanager/new', newProduct)
             .then((res) =>{
                 console.log(res.data);
-                navigate('/petshelter');
+                navigate('/productmanager');
             })
             .catch((err) => {
                 console.log(JSON.stringify(err));
@@ -39,26 +39,26 @@ const CreatePetShelter = (props) => {
     //     console.log("e.target.name " + e.target.name);
     //     console.log("e.target.value " + e.target.value);
 
-    //     let newStateObject = {...newPet};
+    //     let newStateObject = {...newProduct};
     //     newStateObject[e.target.name] = e.target.value;
-    //     setNewPet(newStateObject);
+    //     setNewProduct(newStateObject);
     // }
 
     return (
         <div>
             <div className="listHeader">
-                <h1><MdPets />Pet Shelter</h1>
-                <Link to = {'/petshelter/'}>Back to Home</Link>
+                <h1><IoStorefrontSharp />Product Shelter</h1>
+                <Link to = {'/productmanager/'}>Back to Home</Link>
             </div>
             <div className="createForm">
-                <PetForm
+                <ProductForm
                 submitHandler={submitHandler}
                 errors={ errors }
-                pet={ newPet}
-                setPet={setNewPet}
-                // labelButton={ "Add Pet" }
+                product={ newProduct}
+                setProduct={setNewProduct}
+                // labelButton={ "Add Product" }
                 />
-                <button className ="addButton" onClick={ submitHandler}><BsArrowBarUp/> Add Pet</button>
+                <button className ="addButton" onClick={ submitHandler}><BsArrowBarUp/> Add Product</button>
             </div>
             
         </div>
@@ -67,13 +67,13 @@ const CreatePetShelter = (props) => {
 
 
 // {
-//     "petname": "Putol",
-//     "pettype": "Pooch",
-//     "petdescription": "superdog that can do evrything what you ask for, including laundry!",
+//     "productname": "Putol",
+//     "producttype": "Pooch",
+//     "productdescription": "superdog that can do evrything what you ask for, including laundry!",
 //     "firstskill": "Jumping",
 //     "secondskill": "Eating",
 //     "thirdskill": "Flying",
-//     "petimage": "https://images-na.ssl-images-amazon.com/images/I/81VtHOiH%2B3L._SL1500_.jpg"
+//     "productimage": "https://images-na.ssl-images-amazon.com/images/I/81VtHOiH%2B3L._SL1500_.jpg"
 // }
 
 // 'Sleeping',
@@ -82,4 +82,4 @@ const CreatePetShelter = (props) => {
 //             'Flying',
 //             'Talking'
 
-export default CreatePetShelter;
+export default CreateProductShelter;

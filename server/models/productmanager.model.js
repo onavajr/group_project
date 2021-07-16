@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
-const PetshelterSchema = new mongoose.Schema({
-    petname: {
+const ProductmanagerSchema = new mongoose.Schema({
+    productname: {
         type: String,
-        required: [ true, "Pet name is required"],
-        minlength: [ 3, "Pet name is atlease 3 characters long"]
+        required: [ true, "Product name is required"],
+        minlength: [ 3, "Product name is atlease 3 characters long"]
      },
-    pettype: {
+    producttype: {
         type: String,
-        required: [ true, "Pet type is required"],
-        minlength: [ 3, "Pet name is atlease 3 characters long"]
+        required: [ true, "Product type is required"],
+        minlength: [ 3, "Product name is atlease 3 characters long"]
 
      },
-    petdescription: {
+    productdescription: {
         type: String,
         required: [ true, "Description required"],
-        minlength: [ 3, "Pet name is atlease 3 characters long"]
+        minlength: [ 3, "Product name is atlease 3 characters long"]
     },
     firstskill: {
         type: String,
@@ -61,7 +61,7 @@ const PetshelterSchema = new mongoose.Schema({
             'Running'
         ]
     },
-    petimage: {
+    productimage: {
         type: String },
 
     likes: {
@@ -69,4 +69,4 @@ const PetshelterSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Petshelter', PetshelterSchema);
+module.exports = mongoose.model('Productmanager', ProductmanagerSchema);

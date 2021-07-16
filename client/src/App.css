@@ -54,7 +54,7 @@ small{
 table {
   padding: 5px;
 }
-.petPage{
+.productPage{
   text-align: center;
   border: 2px solid black;
   box-shadow: 2px 2px 2px black;
@@ -63,17 +63,17 @@ table {
 
 }
 
-.petDescription{
+.productDescription{
   text-align: left;
   width: 180px;
 }
 
-.petBio{
+.productBio{
   text-align: left;
 
 }
 
-.petDetails{
+.productDetails{
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -94,7 +94,7 @@ label,select{
 .updateButton, .editPage{
   text-align: center;
 }
-.petForm {
+.productForm {
   width: 500px;
   
 }
@@ -120,7 +120,7 @@ table, th, td {
   border: 1px solid black;
 }
 
-.pet {
+.product {
   display: flex;
   margin: auto;
   background-color: lightblue;
@@ -132,7 +132,7 @@ table, th, td {
   text-align: center;
 }
 
-.imgpet{
+.imgproduct{
   width: 300px;
 }
 
