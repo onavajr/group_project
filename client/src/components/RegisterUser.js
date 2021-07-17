@@ -61,7 +61,7 @@ const RegisterUser = props => {
       }
       <form onSubmit={register}>
         <div>
-          <label>Username</label>
+          <label>Username </label>
           {
             errs.username ? 
               <span className="error-text">{ errs.username.message }</span>
@@ -75,7 +75,7 @@ const RegisterUser = props => {
           />
         </div>
         <div>
-          <label>Email</label>
+          <label>Email </label>
           {
             errs.email? 
               <span className="error-text">{ errs.email.message }</span>
@@ -89,7 +89,7 @@ const RegisterUser = props => {
           />
         </div>
         <div>
-          <label>Password</label>
+          <label>Password </label>
           {
             errs.password ? 
               <span className="error-text">{ errs.password.message }</span>
@@ -103,7 +103,7 @@ const RegisterUser = props => {
           />
         </div>
         <div>
-          <label>Confirm Password</label>
+          <label>Confirm Password </label>
           {
             errs.confirmPassword? 
               <span className="error-text">{ errs.confirmPassword.message }</span>

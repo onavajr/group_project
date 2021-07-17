@@ -11,7 +11,7 @@ const ProductHeader = () => {
             <h1><IoStorefrontSharp />Product Manager</h1>
             <h4>Here at product manager, we give you a unique, and isotic products<br/>
                 with different a type of Items</h4>
-            <img className="product cover" src="https://previews.123rf.com/images/dimbar76/dimbar762003/dimbar76200300028/142283341-collage-of-photos-of-products-and-birds.jpg" />
+            <img className="product cover" src="http://www.teamworld.com/twc/images/main_template/promotional_products-collage.jpg" />
             <Link to = {'/productmanager/login'}>Login to see all products</Link><br></br>
             <small className="small">Warning! some products are not suitable for young audiences.</small>
         </div>

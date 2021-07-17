@@ -20,45 +20,33 @@ const ProductmanagerSchema = new mongoose.Schema({
         type: String,
         required: [ true, "Select Items"],
         enum: [
-            'Sleeping',
-            'Eating',
-            'Jumping',
-            'Flying',
-            'Talking',
-            'Running',
-            'Hunting',
-            'Swimming',
-            'Running'
+            'Accessories',
+            'Product Warranty',
+            'Discount',
+            'Free Shipping',
+            'Customer Support'
         ]
     },
     secondskill: {
         type: String,
         required: [ true, "Select Items"],
         enum: [
-            'Sleeping',
-            'Eating',
-            'Jumping',
-            'Flying',
-            'Talking',
-            'Running',
-            'Hunting',
-            'Swimming',
-            'Running'
+            'Accessories',
+            'Product Warranty',
+            'Discount',
+            'Free Shipping',
+            'Customer Support'
         ]
     },
     thirdskill: {
         type: String,
         required: [ true, "Select Items"],
         enum: [
-            'Sleeping',
-            'Eating',
-            'Jumping',
-            'Flying',
-            'Talking',
-            'Running',
-            'Hunting',
-            'Swimming',
-            'Running'
+            'Accessories',
+            'Product Warranty',
+            'Discount',
+            'Free Shipping',
+            'Customer Support'
         ]
     },
     productimage: {

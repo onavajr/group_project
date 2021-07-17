@@ -34,7 +34,7 @@ const Login = () => {
       <p className="error-text">{errorMessage ? errorMessage : ""}</p>
       <form onSubmit={login}>
         <div>
-          <label>Email</label>
+          <label>Email </label>
           <input
             type="text"
             name="email"
@@ -43,7 +43,7 @@ const Login = () => {
           />
         </div>
         <div>
-          <label>Password</label>
+          <label>Password </label>
           <input 
             type="password"
             name="password"

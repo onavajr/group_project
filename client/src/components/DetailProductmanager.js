@@ -38,15 +38,15 @@ const DetailProductmanager = (props) => {
             <div className="detailHeader">
                     <h2 className="editPage">Details about: {product.productname}</h2>
                     <div>
-                    <button className="deleteButton" onClick={ deleteProduct }><AiOutlineHome /> Adapt {product.productname}</button>
+                    <button className="deleteButton" onClick={ deleteProduct }><AiOutlineHome /> BUY {product.productname}</button>
                     </div>
                     
                 </div>
             <div className="productPage">
                 <div className="productDetails">
                     <div className="productBio">
-                        <h4>Product Type: {product.producttype}</h4>
-                        <h4>Items: </h4>
+                        <h4>Product Price: {product.producttype}</h4>
+                        <h4>This item includes: </h4>
                         <p>{product.firstskill}</p>
                         <p>{product.secondskill}</p>
                         <p>{product.thirdskill}</p>

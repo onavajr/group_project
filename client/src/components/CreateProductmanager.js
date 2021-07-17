@@ -24,14 +24,19 @@ const CreateProductManager = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/productmanager/new', newProduct)
+        axios.post('http://localhost:8000/api/productmanager/new', newProduct, {
+            withCredentials: true
+        })
             .then((res) =>{
                 console.log(res.data);
-                navigate('/productmanager');
+                navigate('/productmanager/');
             })
             .catch((err) => {
                 console.log(JSON.stringify(err));
-                setErrors(err.response.data.errors)
+                console.log(err.response.status)
+                if(err.response.status === 401){
+                    navigate("/productmanager/login")
+                }
             });
     }
 
@@ -48,7 +53,7 @@ const CreateProductManager = (props) => {
         <div>
             <div className="listHeader">
                 <h1><IoStorefrontSharp />Product Manager</h1>
-                <Link to = {'/productmanager/'}>Back to Home</Link>
+                <Link to = {'/productmanager/'}>Back to Product list</Link>
             </div>
             <div className="createForm">
                 <ProductForm

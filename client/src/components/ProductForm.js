@@ -21,10 +21,10 @@ const ProductForm   = (props) => {
 
     // const submitHandler = (e) => {
     //     e.preventDefault();
-    //     axios.post('http://localhost:8000/api/productmanager/new', product)
+    //     axios.post('http://localhost:8000/api/productshelter/new', product)
     //         .then((res) =>{
     //             console.log(res.data);
-    //             navigate('/productmanager');
+    //             navigate('/productshelter');
     //         })
     //         .catch((err) => {
     //             console.log(JSON.stringify(err));
@@ -66,7 +66,7 @@ const ProductForm   = (props) => {
                         }
                     </div>
                     <div  className="formInput">
-                        <label >Product Type: </label>
+                        <label >Item Price: </label>
                         <input
                             className="textBox"
                             type="text"
@@ -106,78 +106,6 @@ const ProductForm   = (props) => {
                         } 
                     </div>
                     <div  className="formInput">
-                    <label className="formLabel">First Skill: </label>
-                        <select
-                            className="textBox"
-                            type="text"
-                            name="firstskill"
-                            value={product.firstskill}
-                            onChange={(e) => inputChange(e)}
-                        >
-                            <option></option>
-                            <option value="Running">Running</option>
-                            <option value="Talking">Talking</option>
-                            <option value="Eating">Eating</option>
-                            <option value="Sleeping">Sleeping</option>
-                            <option value="Jumping">Jumping</option>
-                            <option value="Flying">Flying</option>
-                            <option value="Swimming">Swimming</option>
-                        </select>
-                        {
-                            errors.firstskill ?
-                                <span className="error-text"> {errors.firstskill.message}</span>
-                                :null
-                        }
-                    </div>
-                    <div  className="formInput">
-                        <label className="formLabel">Second Skill: </label>
-                        <select
-                            className="textBox"
-                            type="text"
-                            name="secondskill"
-                            value={product.secondskill}
-                            onChange={(e) => inputChange(e)}
-                        >
-                            <option></option>
-                            <option value="Eating">Eating</option>
-                            <option value="Sleeping">Sleeping</option>
-                            <option value="Running">Running</option>
-                            <option value="Jumping">Jumping</option>
-                            <option value="Flying">Flying</option>
-                            <option value="Talking">Talking</option>
-                            <option value="Swimming">Swimming</option>
-                        </select>
-                        {
-                            errors.secondskill ?
-                                <span className="error-text"> {errors.secondskill.message}</span>
-                                :null
-                        }
-                    </div>
-                    <div  className="formInput">
-                    <label className="formLabel">Third Skill: </label>
-                        <select
-                            className="textBox"
-                            type="text"
-                            name="thirdskill"
-                            value={product.thirdskill}
-                            onChange={(e) => inputChange(e)}
-                        >
-                            <option></option>
-                            <option value="Running">Running</option>
-                            <option value="Talking">Talking</option>
-                            <option value="Eating">Eating</option>
-                            <option value="Sleeping">Sleeping</option>
-                            <option value="Jumping">Jumping</option>
-                            <option value="Flying">Flying</option>
-                            <option value="Swimming">Swimming</option>
-                        </select>
-                        {
-                            errors.thirdskill ?
-                                <span className="error-text"> {errors.thirdskill.message}</span>
-                                :null
-                        }
-                    </div>
-                    <div  className="formInput">
                         <label className="formLabel">Image URL: </label>
                         <input
                             className="textBox"
@@ -186,6 +114,72 @@ const ProductForm   = (props) => {
                             value={product.productimage}
                             onChange={(e) => inputChange(e)}
                         />  
+                    </div>
+                    <div  className="formInput">
+                    <label className="formLabel">Item Include: </label>
+                        <select
+                            className="textBox"
+                            type="text"
+                            name="firstskill"
+                            value={product.firstskill}
+                            onChange={(e) => inputChange(e)}
+                        >
+                            <option></option>
+                            <option value="Accessories">Accesorries</option>
+                            <option value="Product Warranty">Product Warranty</option>
+                            <option value="Discount">Discount</option>
+                            <option value="Free Shipping">Free Shipping</option>
+                            <option value="Customer Support">Customer Support</option>
+                        </select>
+                        {
+                            errors.firstskill ?
+                                <span className="error-text"> {errors.firstskill.message}</span>
+                                :null
+                        }
+                    </div>
+                    <div  className="formInput">
+                        <label className="formLabel"></label>
+                        <select
+                            className="textBox"
+                            type="text"
+                            name="secondskill"
+                            value={product.secondskill}
+                            onChange={(e) => inputChange(e)}
+                        >
+                            <option></option>
+                            <option value="Accessories">Accesorries</option>
+                            <option value="Product Warranty">Product Warranty</option>
+                            <option value="Discount">Discount</option>
+                            <option value="Free Shipping">Free Shipping</option>
+                            <option value="Customer Support">Customer Support</option>
+                        </select>
+                        {
+                            errors.secondskill ?
+                                <span className="error-text"> {errors.secondskill.message}</span>
+                                :null
+                        }
+                    </div>
+                    <div  className="formInput">
+                    <label className="formLabel"></label>
+                        <select
+                            className="textBox"
+                            type="text"
+                            name="thirdskill"
+                            value={product.thirdskill}
+                            onChange={(e) => inputChange(e)}
+                        >
+                            <option></option>
+                            <option value="Accesorries">Accesorries</option>
+                            <option value="Product Warranty">Product Warranty</option>
+                            <option value="Discount">Discount</option>
+                            <option value="Free Shipping">Free Shipping</option>
+                            <option value="Customer Support">Customer Support</option>
+                        </select>
+                        {
+                            errors.thirdskill ?
+                                <span className="error-text"> {errors.thirdskill.message}</span>
+                                :null
+                        }
                     </div>
                     <br/>
                         

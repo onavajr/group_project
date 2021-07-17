@@ -28,25 +28,36 @@ const AllProductmanager = (props) => {
             })
             .catch((err) =>{
                 console.log(err);
-                navigate('/productsheleter');
+                navigate('/productmanager');
             });
     }
-
+    const logout = () =>{
+        axios.post("http://localhost:8000/api/users/logout",{},{
+            withCredentials: true
+        })
+        .then((res) => {
+            console.log(res.data);
+            navigate("productmanager/login")
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
 
     return (
         <div >
             <div className="listHeader">
                 <h1><IoStorefrontSharp />Product Manager</h1>
-                <Link to = {'/productmanager/new/'}>Add product to the manager</Link>
+                <Link to = {'/productmanager/new/'}>Sell your product here!</Link>
             </div>
             <div className="product">
-                <h2>These products are looking for a good home</h2>
+                <h2>This items are ready to sell</h2>
                     <br/>
                     <table>
                         <thead>
                             <tr>
                                 <th>Product Name</th>
-                                <th>Product Type</th>
+                                <th>Item Price</th>
                                 <th>Edit or Delete</th>
                             </tr>
                         </thead>
@@ -71,6 +82,8 @@ const AllProductmanager = (props) => {
                         </tbody>
                     </table>
             </div>
+            <br />
+            <button onClick={logout}>Logout</button>
         </div>
     )
 }
