@@ -18,7 +18,7 @@ const ProductmanagerSchema = new mongoose.Schema({
     },
     firstskill: {
         type: String,
-        required: [ true, "Select Skills"],
+        required: [ true, "Select Items"],
         enum: [
             'Sleeping',
             'Eating',
@@ -33,7 +33,7 @@ const ProductmanagerSchema = new mongoose.Schema({
     },
     secondskill: {
         type: String,
-        required: [ true, "Select Skills"],
+        required: [ true, "Select Items"],
         enum: [
             'Sleeping',
             'Eating',
@@ -48,7 +48,7 @@ const ProductmanagerSchema = new mongoose.Schema({
     },
     thirdskill: {
         type: String,
-        required: [ true, "Select Skills"],
+        required: [ true, "Select Items"],
         enum: [
             'Sleeping',
             'Eating',

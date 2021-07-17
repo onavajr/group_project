@@ -6,7 +6,7 @@ import { BsArrowBarUp } from 'react-icons/bs';
 import { IoStorefrontSharp } from 'react-icons/io5';
 
 
-const CreateProductShelter = (props) => {
+const CreateProductManager = (props) => {
     const [ newProduct, setNewProduct ] = useState({
         productname: "",
         producttype: "",
@@ -47,7 +47,7 @@ const CreateProductShelter = (props) => {
     return (
         <div>
             <div className="listHeader">
-                <h1><IoStorefrontSharp />Product Shelter</h1>
+                <h1><IoStorefrontSharp />Product Manager</h1>
                 <Link to = {'/productmanager/'}>Back to Home</Link>
             </div>
             <div className="createForm">
@@ -82,4 +82,4 @@ const CreateProductShelter = (props) => {
 //             'Flying',
 //             'Talking'
 
-export default CreateProductShelter;
+export default CreateProductManager;

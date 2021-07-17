@@ -8,7 +8,7 @@ import DetailProductmanager from './DetailProductmanager';
 
 
 
-const EditProductShelter = (props) => {
+const EditProductManager = (props) => {
     const { id } = props;
     const [ editProduct, setEditProduct] = useState({});
 
@@ -62,7 +62,7 @@ const EditProductShelter = (props) => {
     return (
         <div>
             <div className="editHeader">
-                <h1><IoStorefrontSharp />Product Shelter</h1>
+                <h1><IoStorefrontSharp />Product Manager</h1>
                 <Link to = {'/productmanager/'}>Back to Home</Link>
             </div>
             <h2>Edit {editProduct.productname}</h2>
@@ -99,4 +99,4 @@ const EditProductShelter = (props) => {
 //             'Flying',
 //             'Talking'
 
-export default EditProductShelter;
+export default EditProductManager;

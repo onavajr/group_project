@@ -36,7 +36,7 @@ const AllProductmanager = (props) => {
     return (
         <div >
             <div className="listHeader">
-                <h1><IoStorefrontSharp />Product Shelter</h1>
+                <h1><IoStorefrontSharp />Product Manager</h1>
                 <Link to = {'/productmanager/new/'}>Add product to the manager</Link>
             </div>
             <div className="product">

@@ -32,7 +32,7 @@ const DetailProductmanager = (props) => {
     return (
         <div>
             <div className="listHeader">
-                <h1><IoStorefrontSharp />Product Shelter</h1>
+                <h1><IoStorefrontSharp />Product Manager</h1>
                 <Link to = {'/productmanager/'}>Back to Home</Link>
             </div>
             <div className="detailHeader">
@@ -46,7 +46,7 @@ const DetailProductmanager = (props) => {
                 <div className="productDetails">
                     <div className="productBio">
                         <h4>Product Type: {product.producttype}</h4>
-                        <h4>Skills: </h4>
+                        <h4>Items: </h4>
                         <p>{product.firstskill}</p>
                         <p>{product.secondskill}</p>
                         <p>{product.thirdskill}</p>
