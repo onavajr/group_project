@@ -7,6 +7,8 @@ app.use(cors({
     credentials: true,
     origin: "http://localhost:3000"
 }));
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true,}))
 require('./config/productmanager.config');
