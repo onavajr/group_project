@@ -14,14 +14,13 @@ const Login = () => {
         password: password,
       },
       {
-        
         withCredentials: true
       })
       .then((res) => {
         console.log(res.cookie);
         console.log(res);
         console.log(res.data, 'is res data!');
-        navigate("/movies");
+        navigate("/productmanager");
       })
       .catch(err => {
         console.log(err.response);
