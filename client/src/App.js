@@ -6,6 +6,8 @@ import DetailProductmanager from './components/DetailProductmanager';
 import EditProductmanager from './components/EditProductmanager';
 import ProductHeader from './components/ProductHeader';
 import LoginRegistration from './views/LoginRegistration';
+import ProductPage from './views/ProductPage';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <DetailProductmanager path="/productmanager/:id" />
         <EditProductmanager path="/productmanager/:id/edit"/>
         <LoginRegistration path="/productmanager/login" />
+        <ProductPage path="/productmanager/shop" />
       </Router>
 
     </div>

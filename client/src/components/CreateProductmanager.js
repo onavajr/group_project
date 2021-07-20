@@ -29,7 +29,7 @@ const CreateProductManager = (props) => {
         })
             .then((res) =>{
                 console.log(res.data);
-                navigate('/productmanager/');
+                navigate('/productpage/');
             })
             .catch((err) => {
                 console.log(JSON.stringify(err));
