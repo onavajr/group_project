@@ -59,17 +59,23 @@ const ProductPage = (props) => {
                                 <th>Product Name</th>
                                 <th>Item Price</th>
                                 <th>Edit or Delete</th>
+                                <th>Cover Image</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 allProducts.map(( product, index) =>(
                                     <tr key={ index }>
+                                        
                                         <td>
                                             { product.productname }
                                         </td>
                                         <td>
                                             { product.producttype }
+                                        </td>
+                                        <td>
+                                            <img className="imgBio" src={product.productimage}/>
                                         </td>
                                         <td> 
 
