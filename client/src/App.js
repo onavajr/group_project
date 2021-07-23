@@ -1,25 +1,26 @@
 import './App.css';
 import { Router } from '@reach/router';
-import AllProductmanager from './components/AllProductmanager';
-import CreateProductManager from './components/CreateProductmanager';
-import DetailProductmanager from './components/DetailProductmanager';
-import EditProductmanager from './components/EditProductmanager';
-import ProductHeader from './components/ProductHeader';
+import AllMusicland from './components/AllMusicland';
+import CreateMusicLand from './components/CreateMusicland';
+import DetailMusicland from './components/DetailMusicland';
+import EditMusicland from './components/EditMusicland';
+import MusicHeader from './components/MusicHeader';
 import LoginRegistration from './views/LoginRegistration';
-import ProductPage from './views/ProductPage';
+import ConcertPage from './views/ConcertPage';
 
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <ProductHeader default/>
-        <AllProductmanager path="/productmanager/" />
-        <CreateProductManager path="/productmanager/new" />
-        <DetailProductmanager path="/productmanager/:id" />
-        <EditProductmanager path="/productmanager/:id/edit"/>
-        <LoginRegistration path="/productmanager/login" />
-        <ProductPage path="/productmanager/shop" />
+        <MusicHeader default/>
+        <AllMusicland path="/musicland/" />
+        <CreateMusicLand path="/musicland/new" />
+        <DetailMusicland path="/musicland/:id" />
+        <EditMusicland path="/musicland/:id/edit"/>
+        <LoginRegistration path="/musicland/login" />
+        {/* <Account path="/musicland/account"/> */}
+        <ConcertPage path="/musicland/concertpage" />
       </Router>
 
     </div>

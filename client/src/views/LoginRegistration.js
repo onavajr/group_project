@@ -5,9 +5,11 @@ import RegisterUser from '../components/RegisterUser'
 
 const LoginRegistration = () => {
     return(
-        <div>
-            <Login />
-            <RegisterUser />
+        <div className="login-reg-form">
+            <div className="login-reg">
+                <Login />
+                <RegisterUser />
+            </div>
         </div>
     )
 }

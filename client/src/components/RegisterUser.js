@@ -61,13 +61,14 @@ const RegisterUser = props => {
       }
       <form onSubmit={register}>
         <div>
-          <label>Username </label>
+          <label className="label">Username </label>
           {
             errs.username ? 
               <span className="error-text">{ errs.username.message }</span>
               : null
           }
           <input
+            className = "input"
             type="text"
             name="username"
             value={user.username}
@@ -75,13 +76,14 @@ const RegisterUser = props => {
           />
         </div>
         <div>
-          <label>Email </label>
+          <label className="label">Email </label>
           {
             errs.email? 
               <span className="error-text">{ errs.email.message }</span>
               : null
           }
           <input
+            className = "input"
             type="email"
             name="email"
             value={user.email}
@@ -89,13 +91,14 @@ const RegisterUser = props => {
           />
         </div>
         <div>
-          <label>Password </label>
+          <label className="label">Password </label>
           {
             errs.password ? 
               <span className="error-text">{ errs.password.message }</span>
               : null
           }
           <input
+            className = "input"
             type="password"
             name="password"
             value={user.password}
@@ -110,6 +113,7 @@ const RegisterUser = props => {
               : null
           }
           <input
+            className = "input"
             type="password"
             name="confirmPassword"
             value={user.confirmPassword}
@@ -117,9 +121,10 @@ const RegisterUser = props => {
           />
         </div>
         <div className="center">
+          <br />
           <button 
             type="submit"
-          >Register Me</button>
+          >Sign Up</button>
         </div>
       </form>
     </div>

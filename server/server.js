@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true,}))
-require('./config/productmanager.config');
-require('./routes/productmanager.routes')(app);
+require('./config/musicland.config');
+require('./routes/musicland.routes')(app);
 require('./routes/user.routes')(app);
 app.listen(process.env.MY_PORT, () => console.log(`Listening on port: ${process.env.MY_PORT}`) );

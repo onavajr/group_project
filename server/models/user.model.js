@@ -8,15 +8,15 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: [true, "email is required"]
+        required: [true, "Email is required"]
     },
     password: {
         type: String,
-        required: [true, "password is required"]
+        required: [true, "Password is required"]
     },
 },{timestamps: true});
 
-UserSchema.virtual("confirmPassword")
+UserSchema.virtual("Confirm Password")
     .get(() => this._confirmPassword)
     .set((value) => this._confirmPassword = value);
 
@@ -33,7 +33,7 @@ UserSchema.pre("save", function(next){
     bcrypt.hash(this.password, 10)
     .then((hashedPassword) =>{
         console.log("password: " + this.password);
-        console.log("hased: " + hashedPassword);
+        console.log("hashed: " + hashedPassword);
         this.password = hashedPassword;
         next();
     })

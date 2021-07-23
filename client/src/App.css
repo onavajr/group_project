@@ -1,7 +1,57 @@
 
-/* * {
-  outline: 1px solid red;
-} */
+* {
+  /* outline: 1px solid red; */
+  color: white;
+  font-size: large;
+  background-blend-mode: darken;
+}
+
+/*//////////////// LOGIN /////////////////*/
+.header-logo {
+  font-size: xx-large;
+}
+
+button {
+  background-color: black;
+  border-radius: 5px;
+}
+
+button:hover {
+  box-shadow: 3px 3px 10px white;
+}
+
+.new-browse-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.login-header{
+  text-align: center;
+}
+
+.input, .textBox{
+  display: block;
+  width: 300px;
+  color: black;
+}
+
+.login-reg-form {
+  margin: 0 auto;
+  width: 450px;
+  padding: 100px;
+}
+
+
+
+/*//////////////// END LOGIN /////////////////*/
+.img-create {
+  width: 400px;
+}
+
+.img-browse{
+  width: 200px;
+}
 
 .frontPage{
   text-align: center;
@@ -23,12 +73,15 @@ small{
   color: white;
   width: 140px;
 }
+
+.deleteButton:hover {
+  box-shadow: 3px 3px 10px white;
+}
 .textBox{
   width: 800px;
 }
 
 .addButton, .editButton {
-  background-color: #2277EA;
   color: white;
   width: 140px;
   padding: 2px;
@@ -38,10 +91,14 @@ small{
   margin-left: 60px;
 }
 
-.createForm, .editForm {
-  border: 1px solid black;
+.createForm {
+  border: 5px solid black;
+  box-shadow: 3px 3px 20px white;
+  width: 500px;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin: 0 auto;
+
 }
 
 .listHeader, .editHeader {
@@ -54,26 +111,26 @@ small{
 table {
   padding: 5px;
 }
-.productPage{
+.musicPage{
   text-align: center;
-  border: 2px solid black;
-  box-shadow: 2px 2px 2px black;
+  border: 5px solid black;
+  box-shadow: 3px 3px 20px white;
   padding: 0px 5px 20px 20px;
   margin-bottom: 50px;
 
 }
 
-.productDescription{
+.musicDescription{
   text-align: left;
   width: 180px;
 }
 
-.productBio{
+.musicBio{
   text-align: left;
 
 }
 
-.productDetails{
+.musicDetails{
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -94,7 +151,11 @@ label,select{
 .updateButton, .editPage{
   text-align: center;
 }
-.productForm {
+.updateButton, .editPage:hover{
+  box-shadow: 3px 3px 10px white;
+}
+
+.musicForm {
   width: 500px;
   
 }
@@ -112,28 +173,25 @@ label,select{
   align-items: center;
 }
 
-button {
-  box-shadow: 2px 2px 2px black;
-}
-
 table, th, td {
   border: 1px solid black;
 }
 
-.product {
+.music {
   display: flex;
   margin: auto;
-  background-color: lightblue;
   flex-direction: column;
   width: 500px;
-  border: 2px solid black;
-  box-shadow: 2px 2px 2px black;
+  border: 5px solid black;
+  box-shadow: 3px 3px 20px white;
   font-weight: 450;
   text-align: center;
 }
 
-.imgproduct{
-  width: 300px;
+.imgmusic{
+  width: 450px;
+  border: 5px solid black;
+  box-shadow: 3px 3px 20px white;
 }
 
 .error-text{
@@ -143,8 +201,10 @@ table, th, td {
 }
 
 .App {
-margin: auto;
-width: 500px;
+
+margin: 0 auto;
+width: 800px;
+
 }
 
 .App-logo {

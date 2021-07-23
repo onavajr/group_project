@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { navigate } from '@reach/router';
+import { GiMusicSpell } from "react-icons/gi";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const Login = () => {
         console.log(res.cookie);
         console.log(res);
         console.log(res.data, 'is res data!');
-        navigate("/productmanager");
+        navigate("/musicland");
       })
       .catch(err => {
         console.log(err.response);
@@ -30,12 +31,17 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
+      <div>
+        <h1 className="header-logo"><GiMusicSpell />Music Land</h1>
+      </div>
+      
+      <h1>Login</h1>
       <p className="error-text">{errorMessage ? errorMessage : ""}</p>
-      <form onSubmit={login}>
+      <form onSubmit={login} className="login">
         <div>
-          <label>Email </label>
+          <label className="label">Email </label>
           <input
+            className = "input"
             type="text"
             name="email"
             value={email}
@@ -43,14 +49,16 @@ const Login = () => {
           />
         </div>
         <div>
-          <label>Password </label>
-          <input 
+          <label className="label">Password </label>
+          <input
+            className = "input"
             type="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <br />
         <div className="center">
           <button 
             type="submit"
@@ -58,6 +66,7 @@ const Login = () => {
         </div>
       </form>
     </div>
+    
   );
 };
 
